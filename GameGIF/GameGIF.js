@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name           GameGIF/Animated Avatars for Game Jolt
+// @name           GameGIF
 // @namespace      http://tampermonkey.net/
 // @version        1.1
 // @icon           https://s.gjcdn.net/img/favicon.png
