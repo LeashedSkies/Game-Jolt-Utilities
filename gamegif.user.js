@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name           GameGIF/Animated Avatars for Game Jolt
 // @namespace      http://tampermonkey.net/
-// @version        1.2
+// @version        1.1
 // @icon           https://s.gjcdn.net/img/favicon.png
 // @description    This replaces your profile picture on Game Jolt with a GIF
 // @author         LeashedSkies
@@ -9,6 +9,8 @@
 // @match          https://*.gamejolt.com/*
 // @grant          none
 // @license        MIT
+// @updateURL      https://github.com/LeashedSkies/Game-Jolt-Utilities/raw/refs/heads/main/gamegif.user.js
+// @downloadURL    https://github.com/LeashedSkies/Game-Jolt-Utilities/raw/refs/heads/main/gamegif.user.js
 // ==/UserScript==
 
 (function() {
@@ -23,7 +25,6 @@
         const avatarElement = document.querySelector(`img[src="${currentProfilePicSrc}"]`);
         if (avatarElement) {
             avatarElement.src = gifUrl;
-            
         }
     }
 
