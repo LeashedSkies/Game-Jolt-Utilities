@@ -16,13 +16,12 @@
 (function() {
     'use strict';
 
-    // Define the current profile picture URL and the GIF URL
-    const currentProfilePicSrc = 'https://m.gjcdn.net/user-avatar/200/8034218-crop36_0_615_579-eiseypvx-v4.webp';
+    // Define the GIF URL
     const gifUrl = 'https://c.tenor.com/OhUxPkhdcgAAAAAd/tenor.gif'; // Your GIF URL
 
     // Function to replace the profile picture on the profile page
     function replaceProfilePicture() {
-        const avatarElement = document.querySelector(`img[src="${currentProfilePicSrc}"]`);
+        const avatarElement = document.querySelector('img[src^="https://m.gjcdn.net/user-avatar/"][src$=".webp"]');
         if (avatarElement) {
             avatarElement.src = gifUrl;
         }
@@ -45,7 +44,7 @@
     function replaceCommentProfilePictures() {
         const commentAvatars = document.querySelectorAll('.user-avatar-img img'); // Adjust this selector if needed
         commentAvatars.forEach((avatarElement) => {
-            if (avatarElement.src === currentProfilePicSrc) {
+            if (avatarElement.src.startsWith('https://m.gjcdn.net/user-avatar/') && avatarElement.src.endsWith('.webp')) {
                 avatarElement.src = gifUrl;
                 avatarElement.style.borderRadius = '100%'; // Circular
                 avatarElement.style.width = '50px'; // Comment width
@@ -58,7 +57,7 @@
     // Function to replace the top right icon's profile picture
     function replaceTopRightProfilePicture() {
         const topRightAvatar = document.querySelector('.user-avatar-img._img img');
-        if (topRightAvatar && topRightAvatar.src.includes(currentProfilePicSrc)) {
+        if (topRightAvatar && topRightAvatar.src.startsWith('https://m.gjcdn.net/user-avatar/') && topRightAvatar.src.endsWith('.webp')) {
             topRightAvatar.src = gifUrl;
             topRightAvatar.style.borderRadius = '50%'; // Circular
             topRightAvatar.style.width = '100px'; // Adjust width to match requirements
