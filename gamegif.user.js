@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name           GameGIF/Animated Avatars for Game Jolt
 // @namespace      http://tampermonkey.net/
-// @version        1.1
+// @version        1.00
 // @icon           https://s.gjcdn.net/img/favicon.png
 // @description    This replaces your profile picture on Game Jolt with a GIF
 // @author         LeashedSkies
